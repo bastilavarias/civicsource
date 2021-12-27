@@ -8,6 +8,14 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", "Arial", "sans-serif"],
       },
+
+      colors: {
+        "white-transparent": "rgba(255,255,255, 0.5)",
+        "primary-gray": "#484848",
+        "secondary-gray": "#8F8F8F",
+        "primary-green": "rgba(0, 235, 62, 1)",
+        "primary-red": "rgba(233, 28, 28, 1)",
+      },
     },
   },
 
