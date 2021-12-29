@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --mode development",
-    "deploy": "npm run build && netlify deploy --prod",
+    "build": "vue-cli-service build --mode",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

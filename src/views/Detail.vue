@@ -53,7 +53,7 @@ export default {
     },
 
     backendURL() {
-      return process.env.VUE_APP_URL;
+      return "https://civicsource-service.herokuapp.com";
     },
   },
 
