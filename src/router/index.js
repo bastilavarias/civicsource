@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "details",
     component: () => import("@/views/Detail"),
   },
 ];
