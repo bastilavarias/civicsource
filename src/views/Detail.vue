@@ -15,12 +15,12 @@
       <for-sale-sign :property="property"></for-sale-sign>
     </div>
 
-    <div class="navigator-left">
+    <div class="navigator-left" @click="toggle('back')">
       <div class="navigator">
         <div></div>
       </div>
     </div>
-    <div class="navigator-right">
+    <div class="navigator-right" @click="toggle('next')">
       <div class="navigator">
         <div></div>
       </div>
@@ -59,12 +59,18 @@ export default {
 
   watch: {
     async propertyID(value) {
-      if (value && value <= 4) {
+      if (value && value >= 1 && value <= 4) {
         this.actionStart = true;
         await this.getProperty();
         await this.getBids();
         this.actionStart = false;
+        return;
       }
+
+      await this.$router.push({
+        name: "details",
+        query: { propertyID: 1 },
+      });
     },
   },
 
@@ -90,6 +96,28 @@ export default {
         this.bids = data.data;
       } catch (error) {
         console.error(error);
+      }
+    },
+
+    async toggle(direction) {
+      let currentID = this.propertyID;
+
+      if (direction === "next") {
+        currentID += 1;
+
+        return await this.$router.push({
+          name: "details",
+          query: { propertyID: currentID },
+        });
+      }
+
+      if (direction === "back") {
+        currentID -= 1;
+
+        return await this.$router.push({
+          name: "details",
+          query: { propertyID: currentID },
+        });
       }
     },
   },
