@@ -12,7 +12,7 @@
     </div>
 
     <div class="empty-lot">
-      <for-sale-sign></for-sale-sign>
+      <for-sale-sign :property="property"></for-sale-sign>
     </div>
 
     <div class="navigator-left">

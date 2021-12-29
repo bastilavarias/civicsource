@@ -8,15 +8,33 @@
     </div>
 
     <div class="description flex flex-col justify-around">
-      <div class="text-center text-xl">Market Value $40,000</div>
-      <div class="text-center font-light" :style="{ color: '#171518' }">
-        <div class="text-xl">14 Flood St.</div>
-        <div>New Orleans, LA 70122</div>
+      <div class="text-center text-xl">
+        Market Value {{ formatCurrency(property.market_value) }}
       </div>
-      <div class="text-center font-light">Reserve Bid $5,000</div>
+      <div class="text-center font-light" :style="{ color: '#171518' }">
+        <div class="text-xl">{{ property.street }}</div>
+        <div>{{ property.city }}, {{ property.address }}</div>
+      </div>
+      <div class="text-center font-light">
+        Reserve Bid {{ property.reservation_value }}
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+import currencyMixin from "@/mixins/Currency";
+
+export default {
+  name: "for-sale-sign",
+
+  mixins: [currencyMixin],
+
+  props: {
+    property: [Object, null],
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .stand {
