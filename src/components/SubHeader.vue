@@ -22,43 +22,28 @@
     <div
       class="w-8/12 flex-shrink-0 bg-white-transparent flex justify-around items-center overflow-auto"
     >
-      <div>
-        <div>
-          <status-icon status="winning"></status-icon>
-          14 Flood St.
+      <template v-for="(bid, index) in bids">
+        <div :key="index">
+          <div>
+            <status-icon :status="bid.property.recent_bid_status"></status-icon>
+            {{ bid.property.street }}
+          </div>
+          <div>
+            <span
+              :class="`${
+                bidStatusExtra(bid.property.recent_bid_status).color
+              } mr-5`"
+              ><span>{{
+                bidStatusExtra(bid.property.recent_bid_status).symbol
+              }}</span
+              >{{ formatCurrency(bid.property.recent_bid_value) }}</span
+            >
+            <span class="font-light text-primary-gray"
+              >${{ bid.property.reservation_value }}</span
+            >
+          </div>
         </div>
-        <div>
-          <span class="text-green-400 mr-5"><span>+</span>&#36;100</span>
-          <span class="font-light text-primary-gray">&#36;5,000</span>
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <status-icon status="outbid"></status-icon>
-          14 Flood St.
-        </div>
-        <div>
-          <span class="text-primary-red mr-5"><span>-</span>&#36;100</span>
-          <span class="font-light text-primary-gray">&#36;5,000</span>
-        </div>
-      </div>
-
-      <div>
-        <div><status-icon status="active"></status-icon> 14 Flood St.</div>
-        <div>
-          <span class="mr-5">&#36;100</span>
-          <span class="font-light text-primary-gray">&#36;5,000</span>
-        </div>
-      </div>
-
-      <div>
-        <div><status-icon status="winning"></status-icon> 14 Flood St.</div>
-        <div>
-          <span class="text-green-400 mr-5"><span>+</span>&#36;100</span>
-          <span class="font-light text-primary-gray">&#36;5,000</span>
-        </div>
-      </div>
+      </template>
     </div>
 
     <div
@@ -97,6 +82,25 @@ export default {
   props: {
     property: [Object, null],
     bids: Array,
+  },
+
+  methods: {
+    bidStatusExtra(status) {
+      let extra = {
+        color: "text-primary-green",
+        symbol: "+",
+      };
+      switch (status) {
+        case "outbid":
+          extra = Object.assign({}, { color: "text-primary-red", symbol: "-" });
+          break;
+
+        case "active":
+          extra = Object.assign({}, { color: "text-primary-gray", symbol: "" });
+      }
+
+      return extra;
+    },
   },
 };
 </script>

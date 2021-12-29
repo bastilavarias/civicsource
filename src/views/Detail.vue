@@ -76,7 +76,6 @@ export default {
         );
         const data = response.data;
         this.property = Object.assign({}, data.data);
-        console.log(this.property);
       } catch (error) {
         console.error(error);
       }
@@ -84,7 +83,9 @@ export default {
 
     async getBids() {
       try {
-        const response = await axios.get(`${this.backendURL}/api/bid`);
+        const response = await axios.get(
+          `${this.backendURL}/api/bid?page=1&per_page=4`
+        );
         const data = response.data;
         this.bids = data.data;
       } catch (error) {
