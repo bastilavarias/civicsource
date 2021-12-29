@@ -1,7 +1,7 @@
 <template>
   <section
     :style="{ backgroundImage: `url(${require('@/assets/properties/1.png')})` }"
-    class="h-screen w-screen bg-no-repeat bg-cover bg-center relative"
+    class="h-screen w-screen bg-no-repeat bg-cover bg-center relative relative"
   >
     <div class="absolute top-0 left-0 w-full h-1/5 4xl:h-1/6">
       <div
@@ -21,9 +21,9 @@
           </svg>
         </div>
         <div class="text-center space-y-1">
-          <div class="font-thin text-primary-gray">Own</div>
+          <div class="font-light text-primary-gray">Own</div>
           <div class="text-4xl font-light">14 Flood St.</div>
-          <div class="font-thin text-primary-gray">New Orleans, LA 70122</div>
+          <div class="font-light text-primary-gray">New Orleans, LA 70122</div>
           <div class="flex justify-center">
             <svg
               fill="#000000"
@@ -110,9 +110,9 @@
           </svg>
         </div>
         <div class="text-center space-y-1">
-          <div class="font-thin text-primary-gray">To</div>
+          <div class="font-light text-primary-gray">To</div>
           <div class="text-4xl font-light">Start</div>
-          <div class="font-thin text-primary-gray">Place Deposit</div>
+          <div class="font-light text-primary-gray">Place Deposit</div>
         </div>
         <div>
           <svg
@@ -128,9 +128,9 @@
           </svg>
         </div>
         <div class="text-center space-y-1">
-          <div class="font-thin text-primary-gray">Market $40,000</div>
+          <div class="font-light text-primary-gray">Market $40,000</div>
           <div class="text-4xl font-light">$5,000</div>
-          <div class="font-thin text-primary-gray">Reserve Price</div>
+          <div class="font-light text-primary-gray">Reserve Price</div>
         </div>
         <svg
           id="Capa_1"
@@ -256,11 +256,83 @@
         </div>
       </div>
     </div>
+
+    <div class="empty-lot">
+      <for-sale-sign></for-sale-sign>
+    </div>
+
+    <div class="navigator-left">
+      <div class="navigator">
+        <div></div>
+      </div>
+    </div>
+    <div class="navigator-right">
+      <div class="navigator">
+        <div></div>
+      </div>
+    </div>
   </section>
 </template>
 <script>
 import StatusIcon from "@/components/StatusIcon";
+import ForSaleSign from "@/components/ForSaleSign";
+
 export default {
-  components: { StatusIcon },
+  components: { ForSaleSign, StatusIcon },
 };
 </script>
+
+<style lang="scss" scoped>
+.navigator {
+  height: 8rem;
+  width: 8rem;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+
+  div {
+    height: 9rem;
+    width: 9rem;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  :active {
+    height: 10rem;
+    width: 10rem;
+
+    div {
+      height: 11rem;
+      width: 11rem;
+    }
+  }
+}
+
+.navigator-left {
+  position: fixed;
+  top: 50%;
+  left: -4%;
+  transform: translateY(-50%);
+}
+
+.navigator-right {
+  position: fixed;
+  top: 50%;
+  right: -4%;
+  transform: translateY(-50%);
+}
+
+.empty-lot {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+
+  transform: translate(-65%, -50%);
+}
+</style>
