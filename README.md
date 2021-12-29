@@ -4,7 +4,9 @@
 - Node.js
 - Vue CLI
 
-## Project setup
+## To use this project in your machine, you need to run these following commands in your terminal.
+
+### Project setup
 ```
 npm install
 ```
@@ -12,11 +14,6 @@ npm install
 ### Compiles and hot-reloads for development
 ```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
 ```
 
 ### Customize configuration
