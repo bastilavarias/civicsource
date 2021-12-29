@@ -317,15 +317,45 @@ export default {
 .navigator-left {
   position: fixed;
   top: 50%;
-  left: -4%;
-  transform: translateY(-50%);
+  left: -9%;
+
+  @media (min-width: 1280px) {
+    left: -7%;
+  }
+
+  @media (min-width: 1536px) {
+    left: -5.5%;
+  }
+
+  @media (min-width: 1920px) {
+    left: -4%;
+  }
+
+  @media (min-width: 2560px) {
+    left: -3.5%;
+  }
 }
 
 .navigator-right {
   position: fixed;
   top: 50%;
-  right: -4%;
-  transform: translateY(-50%);
+  right: -9%;
+
+  @media (min-width: 1280px) {
+    right: -7%;
+  }
+
+  @media (min-width: 1536px) {
+    right: -5.5%;
+  }
+
+  @media (min-width: 1920px) {
+    right: -4%;
+  }
+
+  @media (min-width: 2560px) {
+    right: -3.5%;
+  }
 }
 
 .empty-lot {
@@ -333,6 +363,6 @@ export default {
   left: 50%;
   top: 65%;
 
-  transform: translate(-65%, -50%);
+  transform: translate(-50%, -65%);
 }
 </style>

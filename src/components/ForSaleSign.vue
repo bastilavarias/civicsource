@@ -58,7 +58,7 @@
     left: 16%;
     background-color: rgba(255, 255, 255, 0.5);
     border: 5px solid #0629c9;
-    border-radius: 12%;
+    border-radius: 10%;
   }
 }
 </style>
