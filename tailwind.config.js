@@ -9,6 +9,10 @@ module.exports = {
         sans: ["Poppins", "Arial", "sans-serif"],
       },
 
+      screens: {
+        "4xl": "2560px",
+      },
+
       colors: {
         "white-transparent": "rgba(255,255,255, 0.5)",
         "primary-gray": "#484848",
