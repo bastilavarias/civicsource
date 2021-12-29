@@ -1,3 +1,5 @@
+<p align="center"><a href="https://https://vuejs.org" target="_blank"><img src="https://vuejs.org/images/logo.svg" width="200"></a></p>
+
 # Civic Source Front-end (Vue.js Setup)
 
 ## Requirements:
