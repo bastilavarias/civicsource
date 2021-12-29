@@ -1,4 +1,8 @@
-# Civic Source
+# Civic Source Front-end (Vue.js Setup)
+
+## Requirements:
+- Node.js
+- Vue CLI
 
 ## Project setup
 ```

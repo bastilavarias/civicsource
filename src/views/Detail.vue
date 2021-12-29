@@ -53,7 +53,7 @@ export default {
     },
 
     backendURL() {
-      return "https://civicsource-service.herokuapp.com";
+      return "https://civicsource-service.herokuapp.com/api";
     },
   },
 
@@ -78,7 +78,7 @@ export default {
     async getProperty() {
       try {
         const response = await axios.get(
-          `${this.backendURL}/api/property/${this.propertyID}`
+          `${this.backendURL}/property/${this.propertyID}`
         );
         const data = response.data;
         this.property = Object.assign({}, data.data);
@@ -90,7 +90,7 @@ export default {
     async getBids() {
       try {
         const response = await axios.get(
-          `${this.backendURL}/api/bid?page=1&per_page=4`
+          `${this.backendURL}/bid?page=1&per_page=4`
         );
         const data = response.data;
         this.bids = data.data;
