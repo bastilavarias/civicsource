@@ -1,11 +1,11 @@
 <template>
   <section
     :style="{ backgroundImage: `url(${require('@/assets/properties/1.png')})` }"
-    class="h-screen w-screen bg-no-repeat bg-cover bg-center relative relative"
+    class="h-screen w-screen bg-no-repeat bg-cover bg-center relative relative overflow-hidden"
   >
     <div class="absolute top-0 left-0 w-full h-1/5 4xl:h-1/6">
       <div
-        class="w-full h-3/4 4xl:h-4/5 bg-white opacity-80 flex justify-around items-center"
+        class="w-full h-3/4 4xl:h-4/5 bg-white opacity-80 flex justify-around items-center overflow-auto"
       >
         <div>
           <svg
@@ -180,7 +180,7 @@
       </div>
       <div class="w-full h-1/4 4xl:h-1/4 flex justify-between font-medium">
         <div
-          class="w-2/12 flex-grow bg-white flex justify-between items-center px-3"
+          class="w-2/12 flex-grow bg-white flex justify-between items-center px-3 overflow-auto"
         >
           <div>
             <div>Outbid</div>
@@ -197,7 +197,7 @@
         </div>
 
         <div
-          class="w-8/12 flex-shrink-0 bg-white-transparent flex justify-around items-center"
+          class="w-8/12 flex-shrink-0 bg-white-transparent flex justify-around items-center overflow-auto"
         >
           <div>
             <div>
@@ -239,7 +239,7 @@
         </div>
 
         <div
-          class="w-2/12 flex-grow bg-white flex justify-between items-center px-3"
+          class="w-2/12 flex-grow bg-white flex justify-between items-center px-3 overflow-auto"
         >
           <div>
             <div>Outbid</div>
