@@ -16,7 +16,7 @@
         <div>{{ property.city }}, {{ property.address }}</div>
       </div>
       <div class="text-center font-light">
-        Reserve Bid {{ property.reservation_value }}
+        Reserve Bid {{ formatCurrency(property.reservation_value) }}
       </div>
     </div>
   </div>
